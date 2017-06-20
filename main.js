@@ -17,4 +17,4 @@ var tick = function() {
 document.addEventListener("DOMContentLoaded", function(event) { 
   setInterval(update, 17);
   //setInterval(tick, 100);
-};
+});
