@@ -69,7 +69,7 @@ Entity.prototype.update = function() {
 Entity.prototype.display = function() {
   if(this.move) {
     this.move();
-    console.log("Moving!");
+    console.log(this.move);
   }
   this.update();
   this.draw();
