@@ -1,2 +1,5 @@
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
+var canvas, ctx;
+document.addEventListener("DOMContentLoaded", function(event) { 
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+};
