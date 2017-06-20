@@ -55,7 +55,7 @@ Entity.prototype.getDamage = function() {
 Entity.prototype.draw = function() {
   if(ctx) {
     ctx.beginPath();
-    ctx.fillStyle = "#FFF";
+    ctx.fillStyle = "#FF0000";
     ctx.fillRect(this.pos[0] - this.width/2, this.pos[1] - this.height/2, this.width, this.height);
     ctx.fill();
   }
