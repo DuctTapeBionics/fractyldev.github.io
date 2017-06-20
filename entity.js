@@ -5,8 +5,8 @@ var Entity = function() {
   this.width = config.width || 20;//Physical width
   this.height = config.height || 20;//Physical height
   
-  this.damage = config.damage || 1;//Damage multiplier for any weapons or attacks
-  this.damageMult = config.damageMult || 1;
+  this.damage = config.damage || 1;//Base damage for all attacks
+  this.damageMult = config.damageMult || 1;//Damage multiplier
   
   this.health = config.health || 1000;//Current health
   this.maxHealth = config.health || 1000;//Health cap
@@ -59,4 +59,15 @@ Entity.prototype.draw = function() {
     ctx.fillRect(this.pos[0] - this.width/2, this.pos[1] - this.height/2, this.width, this.height);
     ctx.fill();
   }
+};
+Entity.prototype.update = function() {
+  this.pos = vectAdd(this.pos, this.vel);//Adjust position based on velocity
+  this.vel[0] *= 0.94;
+  this.vel[1] *= 0.99;//Apply friction
+  this.canJump = false;//Reset canJump variable for next frame
+};
+Entity.prototype.display = function() {
+  if(this.move) this.move()
+  this.update();
+  this.draw();
 };
