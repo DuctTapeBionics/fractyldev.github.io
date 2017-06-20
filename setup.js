@@ -12,4 +12,6 @@ function setup() {
 }
 document.addEventListener("DOMContentLoaded", function(event) { 
   setup();
+  console.log(window.innerWidth);
+  console.log(window.innerHeight);
 });//When the document is loaded, resize the canvas
