@@ -121,7 +121,6 @@ Entity.prototype.collideBlock = function(that) {
       if(this.pos[1] - that.pos[1] > 0 && this.vel[1] < 0) {
         this.pos[1] = that.pos[1] + that.height/2 + this.height/2;
         this.vel[1] = 0;
->>>>>>> origin/master
       }
     } //Causes the entity to jump
     damage() {
