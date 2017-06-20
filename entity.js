@@ -72,7 +72,7 @@ Entity.prototype.display = function() {
   this.draw();
 };
 Entity.prototype.collideBlock = function() {
-  if(Game.colliding(this.pos[0], this.pos[1], this.width, this.height, that.pos[0], that.pos[1], that.width, that.height)) {
+  if(colliding(this.pos[0], this.pos[1], this.width, this.height, that.pos[0], that.pos[1], that.width, that.height)) {
     if(Math.abs(this.pos[0] - that.pos[0])/(this.width + that.width) < Math.abs(this.pos[1] - that.pos[1])/(this.height + that.height)) {
       if(this.pos[1] - that.pos[1] < 0 && this.vel[1] >= 0) {
         this.canJump = true;
