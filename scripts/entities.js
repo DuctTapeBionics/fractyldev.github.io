@@ -1,5 +1,3 @@
-
- 
 var Entity = function(config) {
   this.pos = config.pos || [config.x, config.y];//Position
   this.vel = [0, 0];//Velocity
