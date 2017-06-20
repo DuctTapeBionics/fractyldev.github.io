@@ -1,4 +1,4 @@
-function setup() {
+document.addEventListener("DOMContentLoaded", function(event) { 
   var canvas = document.getElementById("canvas");
   if(window.innerWidth/window.innerHeight < 1.2) {
     canvas.width  = window.innerWidth;
@@ -8,7 +8,4 @@ function setup() {
     canvas.width  = 6/5 * window.innerHeight;
     canvas.height = window.innerHeight;
   }
-}
-document.addEventListener("DOMContentLoaded", function(event) { 
-  setup();
 });//When the document is loaded, resize the canvas
