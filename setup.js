@@ -6,8 +6,8 @@ function setup() {
     canvas.height = 5/6 * window.innerWidth;
   }
   else {
-    canvas.width  = window.innerHeight;
-    canvas.height = 5/6 * window.innerHeight;
+    canvas.width  = 6/5 * window.innerHeight;
+    canvas.height = window.innerHeight;
   }
 }
 document.addEventListener("DOMContentLoaded", function(event) { 
