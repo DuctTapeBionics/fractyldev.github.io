@@ -7,7 +7,7 @@ var Player = function(pos) {
 };
 Player.prototype = Object.create(Entity.prototype);
 Player.prototype.move = function() {
-  if(keys[37]) this.moveLeft();//If the left arrow is pressed, move left
-  if(keys[39]) this.moveRight();//If the right arrow is pressed, move right
-  if(keys[38]) this.jump();//If the up arrow is pressed, jump
+  if(keys[37]) { this.moveLeft(); }//If the left arrow is pressed, move left
+  if(keys[39]) { this.moveRight(); }//If the right arrow is pressed, move right
+  if(keys[38]) { this.jump(); }//If the up arrow is pressed, jump
 };
