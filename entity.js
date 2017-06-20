@@ -62,6 +62,7 @@ Entity.prototype.draw = function() {
 };
 Entity.prototype.update = function() {
   this.pos = vectAdd(this.pos, this.vel);//Adjust position based on velocity
+  this.vel[1] += 0.4;
   this.vel[0] *= 0.94;
   this.vel[1] *= 0.99;//Apply friction
   this.canJump = false;//Reset canJump variable for next frame
