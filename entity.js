@@ -67,7 +67,10 @@ Entity.prototype.update = function() {
   this.canJump = false;//Reset canJump variable for next frame
 };
 Entity.prototype.display = function() {
-  if(this.move) this.move()
+  if(this.move) {
+    this.move();
+    console.log("Moving!");
+  }
   this.update();
   this.draw();
 };
