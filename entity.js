@@ -71,3 +71,30 @@ Entity.prototype.display = function() {
   this.update();
   this.draw();
 };
+Entity.prototype.collideBlock = function() {
+  if(Game.colliding(this.pos[0], this.pos[1], this.width, this.height, that.pos[0], that.pos[1], that.width, that.height)) {
+    if(Math.abs(this.pos[0] - that.pos[0])/(this.width + that.width) < Math.abs(this.pos[1] - that.pos[1])/(this.height + that.height)) {
+      if(this.pos[1] - that.pos[1] < 0 && this.vel[1] >= 0) {
+        this.canJump = true;
+        this.pos[1] = that.pos[1] - that.height/2 - this.height/2;
+        this.vel[1] = 0
+      }
+      if(this.pos[1] - that.pos[1] > 0 && this.vel[1] < 0) {
+        this.pos[1] = that.pos[1] + that.height/2 + this.height/2;
+        this.vel[1] = 0;
+      }
+    }
+    if(Math.abs(this.pos[0] - that.pos[0])/(this.width + that.width) > Math.abs(this.pos[1] - that.pos[1])/(this.height + that.height)) {
+      if(Math.abs(this.pos[1] - that.pos[1]) * 2 < (this.height + that.height) * 4/5 || Math.abs(this.pos[0] - that.pos[0]) * 2 < (this.width + that.width) * 4/5) {
+        if(this.pos[0] - that.pos[0] < 0 && this.vel[0] > 0) {
+           this.pos[0] = that.pos[0] - that.width/2 - this.width/2;
+           this.vel[0] = 0;
+        }
+        if(this.pos[0] - that.pos[0] > 0 && this.vel[0] < 0) {
+          this.pos[0] = that.pos[0] + that.width/2 + this.width/2;
+          this.vel[0] = 0;
+        }
+      }
+    }
+  }
+};
