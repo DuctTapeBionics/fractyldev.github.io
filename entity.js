@@ -25,10 +25,10 @@ var Entity = function(config) {
   this.speedMult = config.speedMult || 1;//Speed multiplier
 };
 Entity.prototype.moveLeft = function() {
-  this.vel[0] -= this.getSpeed;//Simply adjust the entity's velocity
+  this.vel[0] -= this.getSpeed();//Simply adjust the entity's velocity
 };//Moves the entity to the left
 Entity.prototype.moveRight = function() {
-  this.vel[0] += this.getSpeed;//Simply adjust the entity's velocity
+  this.vel[0] += this.getSpeed();//Simply adjust the entity's velocity
 };//Moves the entity to the right
 Entity.prototype.jump = function() {
   if(this.canJump) {//If the entity can jump...
@@ -68,10 +68,7 @@ Entity.prototype.update = function() {
   this.canJump = false;//Reset canJump variable for next frame
 };
 Entity.prototype.display = function() {
-  if(this.move) {
-    this.move();
-    console.log(this.move);
-  }
+  if(this.move) this.move();
   this.update();
   this.draw();
 };
