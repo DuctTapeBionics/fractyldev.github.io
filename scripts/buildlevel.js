@@ -4,6 +4,7 @@ var buildLevel = function(levelid) {
   blocks = [];
   
   var file = new File([""], "../levels/" + levelid + ".txt");
+  console.log(file);
   for(var y = 0; y < 20; y++) {
     var line = file.readln().split(" ");
     for(var x = 0; x < 20; x++) {
