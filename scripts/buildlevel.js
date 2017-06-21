@@ -8,5 +8,5 @@ var buildLevel = function(levelid) {
     var str = event.target.result;
     console.log(str);
   };
-  fr.readAsText(new File([""], "..\levels\000.txt"));
+  fr.readAsText(new File([""], "..\levels\" + levelid + ".txt"));
 };
