@@ -8,6 +8,6 @@ var buildLevel = function(levelid) {
     var str = event.target.result;
     console.log(str);
   };
-  var fn = "..\\levels\\" + levelid + ".txt";
+  var fn = "levels\\" + levelid + ".txt";
   fr.readAsText(new File([""], fn));
 };
