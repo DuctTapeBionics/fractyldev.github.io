@@ -1,6 +1,6 @@
 var player = new Player([200, 200]);
 
-buildLevel("000");
+buildLevel(0);
 
 var update = function() {
   ctx.beginPath();
