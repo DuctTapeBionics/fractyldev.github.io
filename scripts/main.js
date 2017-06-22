@@ -1,6 +1,8 @@
 var player = new Player([200, 200]);
 
-buildLevel(0);
+document.addEventListener("DOMContentLoaded", function(event) { 
+  buildLevel(0);
+});
 
 var update = function() {
   ctx.beginPath();
